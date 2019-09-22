@@ -1,0 +1,3 @@
+/home/nyex/CLionProjects/server_game/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/nyex/CLionProjects/server_game/cmake-build-debug/CMakeFiles/server_game.dir
+/home/nyex/CLionProjects/server_game/cmake-build-debug/CMakeFiles/edit_cache.dir
