@@ -6,19 +6,27 @@
 
 #IncludeRegexTransform: 
 
+/home/nyex/CLionProjects/server_game/SocketServer.c
+sys/socket.h
+-
+netinet/in.h
+-
+unistd.h
+-
+stdio.h
+-
+string.h
+-
+syslog.h
+/home/nyex/CLionProjects/server_game/syslog.h
+SocketServer.h
+/home/nyex/CLionProjects/server_game/SocketServer.h
+
 /home/nyex/CLionProjects/server_game/SocketServer.h
 sys/socket.h
 -
 netinet/in.h
 -
-
-/home/nyex/CLionProjects/server_game/main.c
-stdio.h
--
-SocketServer.h
-/home/nyex/CLionProjects/server_game/SocketServer.h
-syslog.h
-/home/nyex/CLionProjects/server_game/syslog.h
 
 /home/nyex/CLionProjects/server_game/syslog.h
 stdio.h

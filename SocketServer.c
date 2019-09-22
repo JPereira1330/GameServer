@@ -39,15 +39,27 @@ int serverStart(int port){
     // Escutando na porta
     ret = gs_listen(server_fd, 3);
 
-    cli_handle = gs_accept(server_fd, (struct sockaddr *) &addr, (socklen_t *) &addr);
-    print_log("Cliente: %d", cli_handle);
+    while(1) {
+        // Zerando memoria
+        memset(buffer, 0, sizeof(buffer));
 
-    ret = read(cli_handle , buffer, 1024);
-    printf("%s\n",buffer );
-    send(cli_handle , buffer, strlen(buffer) , 0 );
-    printf("Hello message sent\n");
+        cli_handle = gs_accept(server_fd, (struct sockaddr *) &addr, (socklen_t *) &addr);
+        print_log("Cliente: %d", cli_handle);
 
-    return 1;
+        while(1) {
+            ret = recv(cli_handle, buffer, sizeof(buffer), 0);
+            printf("%s\n", buffer);
+
+            if(!ret){
+                break;
+            }
+
+            send(cli_handle, buffer, strlen(buffer), 0);
+            printf("Hello message sent\n");
+        }
+    }
+
+    return 0;
 }
 
 int gs_socket(int domain, int type, int protocol){
